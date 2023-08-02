@@ -2,6 +2,8 @@
 // GAME-BOARD MODULE
 const myGameBoard = (function() {
     let gameBoard = ["x", "o", "x", "o"];
+    
+    return {gameBoard}
 })();
 
 
@@ -10,4 +12,5 @@ const myGameBoard = (function() {
 const myPlayers = function() {
     return {}
 }
+
 
