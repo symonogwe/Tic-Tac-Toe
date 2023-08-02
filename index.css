@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --base-color: #011627;
+    --sub-base-color: #2ec4b6;
+    --sub-color: #ff9f1c;
+    --base-p-fs: calc(.5rem + .6vw);
+    --base-header-fs: calc(.9rem + 2vw);
+    --logo-width: max(20px, 10%);
+    --base-header-ff: "Bebas Neue", sans-serif;
+    --base-paragraph-ff: "League Spartan", sans-serif;
+    --base-margin: ;
+    --base-padding: ;
+}
