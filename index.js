@@ -27,16 +27,19 @@ const player1 = myPlayers("symon", "x");
 const player2 = myPlayers("Ogwe", "o");
 
 
-let allDiv = document.querySelectorAll(".game-grid");
-allDiv.forEach(div => {
-    div.addEventListener("click", player1.addToBoard.bind(div, div.dataset.index))
-})
+// MY GAME MODULE
+const myGame = (function() {
+    let _allDiv = document.querySelectorAll(".game-grid");
 
-allDiv.forEach(div => {
-    div.addEventListener("click", player2.addToBoard.bind(div, div.dataset.index))
-})
+    function gamePlay() {
+        
+    }
+
+    return {gamePlay}
+})();
 
 
 console.log(myGameBoard.render());
 
 
+myGame.gamePlay();
