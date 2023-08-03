@@ -13,9 +13,17 @@ const myGameBoard = (function() {
 
 
 // PLAYER FACTORY FUNCTION
-const myPlayers = function() {
-    return {}
+const myPlayers = function(name, marker) {
+    return {
+        addToBoard: function(index) {
+          myGameBoard.render()[index] = marker;
+        }
+    }
 }
+
+// PLAYER OBJECTS
+const player1 = myPlayers("symon", "x");
+const player2 = myPlayers("Ogwe", "o");
 
 console.log(myGameBoard.render());
 
