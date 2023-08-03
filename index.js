@@ -1,7 +1,8 @@
 
 // GAME-BOARD MODULE
 const myGameBoard = (function() {
-    let _gameBoard = ["x", "x", "x", "o", "x", "o"];
+    let _gameBoard = [];
+
 
     function render() {
         return _gameBoard;
@@ -16,7 +17,7 @@ const myGameBoard = (function() {
 const myPlayers = function(name, marker) {
     return {
         addToBoard: function(index) {
-          myGameBoard.render()[index] = marker;
+            myGameBoard.render()[index] = marker;
         }
     }
 }
@@ -24,6 +25,17 @@ const myPlayers = function(name, marker) {
 // PLAYER OBJECTS
 const player1 = myPlayers("symon", "x");
 const player2 = myPlayers("Ogwe", "o");
+
+
+let allDiv = document.querySelectorAll(".game-grid");
+allDiv.forEach(div => {
+    div.addEventListener("click", player1.addToBoard.bind(div, div.dataset.index))
+})
+
+allDiv.forEach(div => {
+    div.addEventListener("click", player2.addToBoard.bind(div, div.dataset.index))
+})
+
 
 console.log(myGameBoard.render());
 
