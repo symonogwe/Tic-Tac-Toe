@@ -18,28 +18,42 @@ const myPlayers = function(name, marker) {
     return {
         addToBoard: function(index) {
             myGameBoard.render()[index] = marker;
-        }
+        },
+        marker,
+        name
     }
 }
 
-// PLAYER OBJECTS
 const player1 = myPlayers("symon", "x");
 const player2 = myPlayers("Ogwe", "o");
 
 
 // MY GAME MODULE
 const myGame = (function() {
-    let _allDiv = document.querySelectorAll(".game-grid");
+    let _playerArray = [player1, player2];
+    let _currentPlayer = _playerArray[0];
 
-    function gamePlay() {
-        
+    function switchPlayer() {
+        _currentPlayer = _currentPlayer === _playerArray[0] ? 
+        _playerArray[1] : _playerArray[0];
     }
 
-    return {gamePlay}
+    function _printPlayer() {
+        console.log(_currentPlayer);
+    }
+
+    function playRound(index) {
+        _currentPlayer.addToBoard(index);
+        switchPlayer();
+        _printPlayer();
+    }
+    
+
+    return {playRound}
+    
 })();
 
 
 console.log(myGameBoard.render());
 
 
-myGame.gamePlay();
