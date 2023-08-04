@@ -46,6 +46,126 @@ const myGame = (function() {
         _currentPlayer.addToBoard(index);
         switchPlayer();
         _printPlayer();
+        _gameOver();
+    }
+
+    function _gameOver() {
+        // player one wins
+        if (myGameBoard.render()[0] === player1.marker &&
+        myGameBoard.render()[1] === player1.marker &&
+        myGameBoard.render()[2] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[3] === player1.marker &&
+        myGameBoard.render()[4] === player1.marker &&
+        myGameBoard.render()[5] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[6] === player1.marker &&
+        myGameBoard.render()[7] === player1.marker &&
+        myGameBoard.render()[8] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[0] === player1.marker &&
+        myGameBoard.render()[3] === player1.marker &&
+        myGameBoard.render()[6] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[1] === player1.marker &&
+        myGameBoard.render()[4] === player1.marker &&
+        myGameBoard.render()[7] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[2] === player1.marker &&
+        myGameBoard.render()[5] === player1.marker &&
+        myGameBoard.render()[8] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[6] === player1.marker &&
+        myGameBoard.render()[4] === player1.marker &&
+        myGameBoard.render()[2] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[0] === player1.marker &&
+        myGameBoard.render()[4] === player1.marker &&
+        myGameBoard.render()[8] === player1.marker) {
+            console.log("PLAYER 1 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        // player 2 wins
+        if (myGameBoard.render()[0] === player2.marker &&
+        myGameBoard.render()[1] === player2.marker &&
+        myGameBoard.render()[2] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[3] === player2.marker &&
+        myGameBoard.render()[4] === player2.marker &&
+        myGameBoard.render()[5] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[6] === player2.marker &&
+        myGameBoard.render()[7] === player2.marker &&
+        myGameBoard.render()[8] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[0] === player2.marker &&
+        myGameBoard.render()[3] === player2.marker &&
+        myGameBoard.render()[6] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[1] === player2.marker &&
+        myGameBoard.render()[4] === player2.marker &&
+        myGameBoard.render()[7] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[2] === player2.marker &&
+        myGameBoard.render()[5] === player2.marker &&
+        myGameBoard.render()[8] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[6] === player2.marker &&
+        myGameBoard.render()[4] === player2.marker &&
+        myGameBoard.render()[2] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        if (myGameBoard.render()[0] === player2.marker &&
+        myGameBoard.render()[4] === player2.marker &&
+        myGameBoard.render()[8] === player2.marker) {
+            console.log("PLAYER 2 WINS")
+            myGameBoard.render().length = 0;
+            switchPlayer();
+        }
+        
+
     }
     
 
