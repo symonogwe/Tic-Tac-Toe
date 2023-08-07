@@ -62,4 +62,15 @@ body {
   border-radius: 10px;
   font-size: var(--base-p-fs);
   color: var(--text-color);
+  position: relative;
+}
+
+
+/* DOM STYLING */
+.player-marker {
+  color: var(--sub-color);
+  font-size: calc(3rem + 3vw);
+  position: absolute;
+  top: 15%;
+  left: 30%;
 }
