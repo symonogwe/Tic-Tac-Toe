@@ -1,57 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 :root {
-    --base-color: #011627;
-    --sub-base-color: #2ec4b6;
-    --sub-color: #ff9f1c;
-    --text-color: #fdfffc;
-    --base-p-fs: calc(.5rem + .6vw);
-    --base-header-fs: calc(2rem + 2vw);
-    --logo-width: max(20px, 10%);
-    --base-header-ff: "Bebas Neue", sans-serif;
-    --base-paragraph-ff: "League Spartan", sans-serif;
-    --base-margin: .3em 0em;
-    --base-padding: ;
+  --base-color: #011627;
+  --sub-base-color: #2ec4b6;
+  --sub-color: #ff9f1c;
+  --text-color: #fdfffc;
+  --base-p-fs: calc(0.5rem + 0.6vw);
+  --base-header-fs: calc(2rem + 2vw);
+  --logo-width: max(20px, 10%);
+  --base-header-ff: "Bebas Neue", sans-serif;
+  --base-paragraph-ff: "League Spartan", sans-serif;
+  --base-margin: 0.3em 0em;
+  --base-padding: ;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--base-color);
+  background-color: var(--base-color);
 }
 
 #main-content {
-    /* border: 1px solid red; */
-    height: 95vh;
+  /* border: 1px solid red; */
+  height: 95vh;
 }
 
 .game-h1 {
+  text-align: center;
+  color: var(--text-color);
+  font-family: var(--base-header-ff);
+  font-size: var(--base-header-fs);
+  margin: var(--base-margin);
+}
+
+.player-turn {
     text-align: center;
-    color: var(--text-color);
-    font-family: var(--base-header-ff);
+    color: var(--sub-color);
+    font-family: var(--base-paragraph-ff);
     font-size: var(--base-header-fs);
     margin: var(--base-margin);
 }
 
 .game-grid-container {
-    /* border: 1px solid yellow; */
-    width: 30%;
-    height: 50%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 30px;
+  /* border: 1px solid yellow; */
+  width: 30%;
+  height: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .game-grid {
-    background-color: var(--sub-base-color);
-    border-radius: 10px;
-    font-size: var(--base-p-fs);
-    color: var(--text-color);
+  background-color: var(--sub-base-color);
+  border-radius: 10px;
+  font-size: var(--base-p-fs);
+  color: var(--text-color);
 }
