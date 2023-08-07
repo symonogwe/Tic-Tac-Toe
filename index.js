@@ -39,7 +39,7 @@ const myGame = (function() {
     }
 
     function _printPlayer() {
-        console.log(_currentPlayer);
+        console.log(`It is ${_currentPlayer.marker}'s turn`);
     }
 
     function playRound(index) {
