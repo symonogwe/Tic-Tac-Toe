@@ -1,7 +1,7 @@
 
 // GAME-BOARD MODULE
 const myGameBoard = (function() {
-    let _gameBoard = [];
+    let _gameBoard = ["", "", "", "", "", "", "", "", ""];
 
 
     function render() {
