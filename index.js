@@ -1,7 +1,7 @@
 
 // GAME-BOARD MODULE
 const myGameBoard = (function() {
-    let _gameBoard = ["", "", "", "", "", "", "", "", ""];
+    let _gameBoard = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
 
 
     function render() {
@@ -163,6 +163,13 @@ const myGame = (function() {
             console.log("PLAYER 2 WINS")
             myGameBoard.render().length = 0;
             switchPlayer();
+        }
+        // check for a draw
+        if (myGameBoard.render().length === 9 && 
+        myGameBoard.render().every(i => !i.includes(" "))) {
+            console.log("ITS A DRAW")
+            myGameBoard.render().length = 0;
+            _currentPlayer = _playerArray[0];
         }
         
 
