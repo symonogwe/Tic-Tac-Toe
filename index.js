@@ -39,7 +39,7 @@ const myGame = (function() {
     }
 
     function printPlayer() {
-       return `it is ${_currentPlayer.marker}'s turn`;
+       return `it is ${_currentPlayer.name}'s turn`;
     }
 
     function playRound(index) {
@@ -186,15 +186,19 @@ const myDisplayController = (function() {
     const _gameContainer = document.querySelector(".game-grid-container");
     const _playerTurnDisplay = document.querySelector(".player-turn");
 
+    const _playNameContainer = document.querySelector(".player-names-container");
+    const _playBtnDiv = document.querySelector(".play-game");
+    const _playGameBtn = document.querySelector(".play-game-btn");
+
     // methods that update display on the result of the game
     function playerOneWins() {
-        _playerTurnDisplay.textContent = "Game Over! X wins";
+        _playerTurnDisplay.textContent = `Game Over! ${player1.name} Wins`;
         
         console.log(myGame.playerTurn);
     }
 
     function playerTwoWins() {
-        _playerTurnDisplay.textContent = "Game Over! O wins";
+        _playerTurnDisplay.textContent = `Game Over! ${player2.name} Wins`;
 
         console.log(myGame.playerTurn);
     }
@@ -252,12 +256,23 @@ const myDisplayController = (function() {
         }
     }
 
+    function _playerNames() {
+        player1.name = document.getElementById("player-1").value;
+        player2.name = document.getElementById("player-2").value;
+
+        _playNameContainer.style.display = "none";
+        _playBtnDiv.style.display = "none";
+
+        updateScreen();
+    }
+
+    _playGameBtn.addEventListener("click", _playerNames);
+
     
     return {updateScreen, playerOneWins, playerTwoWins, noPlayerWins}
 
 })();
 
-myDisplayController.updateScreen()
 
 console.log(myGameBoard.render());
 
