@@ -7,9 +7,26 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <!-- Main container -->
     <div id="main-content">
       <h1 class="game-h1">My Tic Tac Toe</h1>
+      <!-- Player name forms container-->
+      <div class="player-names-container">
+        <div class="player-names">
+          <h3>Player1</h3>
+          <input type="text" id="player-1" placeholder="name..." />
+        </div>
+        <div class="player-names">
+          <h3>Player2</h3>
+          <input type="text" id="player-2" placeholder="name..." />
+        </div>
+      </div>
+      <div class="play-game">
+        <button type="submit" class="play-game-btn">Play Game</button>
+      </div>
+      <!-- Player turn div -->
       <div class="player-turn"></div>
+      <!-- Game grid container -->
       <div class="game-grid-container"></div>
     </div>
     <script src="index.js"></script>

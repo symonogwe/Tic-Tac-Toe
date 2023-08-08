@@ -38,6 +38,55 @@ body {
   margin: var(--base-margin);
 }
 
+.player-names-container {
+  display: flex;
+  justify-content: space-between;
+  height: 20%;
+  padding: 0 2em;
+}
+
+.player-names {
+  width: 30%;
+  height: 70%;
+  background-color: var(--sub-base-color);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.player-names > h3 {
+  color: var(--text-color);
+  font-size: calc(1.4rem + 1vw);
+  font-family: var(--base-paragraph-ff);
+  margin-top: .1em;
+}
+
+.player-names > input {
+  border: none;
+  border-radius: 5px;
+  height: 20%;
+  margin-top: 20px;
+}
+
+.player-names > input:focus {
+  outline: none;
+}
+
+.play-game {
+  display: flex;
+  justify-content: center;
+}
+
+.play-game-btn {
+  background-color: var(--sub-color);
+  border: none;
+  color: var(--text-color);
+  font-size: calc(.7rem + 1vw);
+  font-family: var(--base-paragraph-ff);
+  padding: .4em .8em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .player-turn {
     text-align: center;
     color: var(--sub-color);
