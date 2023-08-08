@@ -56,6 +56,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[3] === player1.marker &&
         myGameBoard.render()[4] === player1.marker &&
@@ -63,6 +64,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[6] === player1.marker &&
         myGameBoard.render()[7] === player1.marker &&
@@ -70,6 +72,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[0] === player1.marker &&
         myGameBoard.render()[3] === player1.marker &&
@@ -77,6 +80,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[1] === player1.marker &&
         myGameBoard.render()[4] === player1.marker &&
@@ -84,6 +88,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[2] === player1.marker &&
         myGameBoard.render()[5] === player1.marker &&
@@ -91,6 +96,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[6] === player1.marker &&
         myGameBoard.render()[4] === player1.marker &&
@@ -98,6 +104,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[0] === player1.marker &&
         myGameBoard.render()[4] === player1.marker &&
@@ -105,6 +112,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerOneWins();
+            myDisplayController.playNewGame();
         }
         // CHECK IF PLAYER 2 WINS
         if (myGameBoard.render()[0] === player2.marker &&
@@ -113,6 +121,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[3] === player2.marker &&
         myGameBoard.render()[4] === player2.marker &&
@@ -120,6 +129,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[6] === player2.marker &&
         myGameBoard.render()[7] === player2.marker &&
@@ -127,6 +137,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[0] === player2.marker &&
         myGameBoard.render()[3] === player2.marker &&
@@ -134,6 +145,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[1] === player2.marker &&
         myGameBoard.render()[4] === player2.marker &&
@@ -141,6 +153,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[2] === player2.marker &&
         myGameBoard.render()[5] === player2.marker &&
@@ -148,6 +161,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[6] === player2.marker &&
         myGameBoard.render()[4] === player2.marker &&
@@ -155,6 +169,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         if (myGameBoard.render()[0] === player2.marker &&
         myGameBoard.render()[4] === player2.marker &&
@@ -162,6 +177,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.playerTwoWins();
+            myDisplayController.playNewGame();
         }
         // CHECK FOR A DRAW
         if (myGameBoard.render().length === 9 && 
@@ -169,6 +185,7 @@ const myGame = (function() {
             myGameBoard.render().length = 0;
             switchPlayer();
             myDisplayController.noPlayerWins();
+            myDisplayController.playNewGame();
         }
         
 
@@ -183,6 +200,7 @@ const myGame = (function() {
 const myDisplayController = (function() {
 
     // DOM elements
+    const _mainContentContainer = document.getElementById("main-content");
     const _gameContainer = document.querySelector(".game-grid-container");
     const _playerTurnDisplay = document.querySelector(".player-turn");
 
@@ -268,8 +286,31 @@ const myDisplayController = (function() {
 
     _playGameBtn.addEventListener("click", _playerNames);
 
+    // function to play a new game after one ends
+    function playNewGame() {
+        let btnDiv = document.createElement("div");
+        btnDiv.style.display = "flex";
+        btnDiv.style.justifyContent = "center";
+        btnDiv.style.marginTop = "4em";
+
+
+        let playAgainBtn = document.createElement("button");
+        playAgainBtn.textContent = "Restart Game";
+        playAgainBtn.classList.add("play-game-btn");
+
+        btnDiv.append(playAgainBtn);
+
+        playAgainBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+
+        _playerTurnDisplay.append(btnDiv)
+
+    }
+
+
     
-    return {playerOneWins, playerTwoWins, noPlayerWins}
+    return {playerOneWins, playerTwoWins, noPlayerWins, playNewGame}
 
 })();
 
