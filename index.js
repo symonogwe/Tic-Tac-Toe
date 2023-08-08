@@ -212,7 +212,7 @@ const myDisplayController = (function() {
     }
 
     // Method that updates screen after EACH player plays a turn
-    function updateScreen() {
+    function _updateScreen() {
         _gameContainer.textContent = "";
 
         // creates divs based on length of gameBoard array
@@ -252,7 +252,7 @@ const myDisplayController = (function() {
         }else{
             myGame.playRound(e.target.dataset.index);
             console.log(myGameBoard.render());
-            updateScreen()
+            _updateScreen()
         }
     }
 
@@ -263,13 +263,13 @@ const myDisplayController = (function() {
         _playNameContainer.style.display = "none";
         _playBtnDiv.style.display = "none";
 
-        updateScreen();
+        _updateScreen();
     }
 
     _playGameBtn.addEventListener("click", _playerNames);
 
     
-    return {updateScreen, playerOneWins, playerTwoWins, noPlayerWins}
+    return {playerOneWins, playerTwoWins, noPlayerWins}
 
 })();
 
