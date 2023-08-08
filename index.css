@@ -12,7 +12,7 @@
   --base-header-ff: "Bebas Neue", sans-serif;
   --base-paragraph-ff: "League Spartan", sans-serif;
   --base-margin: 0.3em 0em;
-  --base-padding: ;
+  --box-shadow: 5px 10px 30px black;
 }
 
 * {
