@@ -1,4 +1,4 @@
-
+"use strict"
 // GAME-BOARD MODULE
 const myGameBoard = (function() {
     let _gameBoard = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
@@ -106,7 +106,7 @@ const myGame = (function() {
             switchPlayer();
             myDisplayController.playerOneWins();
         }
-        // player 2 wins
+        // CHECK IF PLAYER 2 WINS
         if (myGameBoard.render()[0] === player2.marker &&
         myGameBoard.render()[1] === player2.marker &&
         myGameBoard.render()[2] === player2.marker) {
@@ -163,7 +163,7 @@ const myGame = (function() {
             switchPlayer();
             myDisplayController.playerTwoWins();
         }
-        // check for a draw
+        // CHECK FOR A DRAW
         if (myGameBoard.render().length === 9 && 
         myGameBoard.render().every(i => !i.includes(" "))) {
             myGameBoard.render().length = 0;
@@ -200,7 +200,11 @@ const myDisplayController = (function() {
     }
 
     function noPlayerWins() {
-        _playerTurnDisplay.textContent = "Its a Tie!"
+        _playerTurnDisplay.textContent = "Its a Tie!";
+    }
+
+    function _invalidMove() {
+        _playerTurnDisplay.textContent = "Invalid! Click Empty Square";
     }
 
     // Method that updates screen after EACH player plays a turn
@@ -239,10 +243,15 @@ const myDisplayController = (function() {
 
     // click event function added to all created box divs
     function clickHandler(e) {
-        myGame.playRound(e.target.dataset.index);
-        console.log(myGameBoard.render());
-        updateScreen()
+        if (myGameBoard.render()[e.target.dataset.index] !== " ") {
+            _invalidMove();
+        }else{
+            myGame.playRound(e.target.dataset.index);
+            console.log(myGameBoard.render());
+            updateScreen()
+        }
     }
+
     
     return {updateScreen, playerOneWins, playerTwoWins, noPlayerWins}
 
