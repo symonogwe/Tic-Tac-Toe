@@ -96,14 +96,13 @@ body {
 }
 
 .game-grid-container {
-  /* border: 1px solid yellow; */
-  width: 30%;
-  height: 50%;
+  width: 60vmin;
+  height: 60vmin;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
 }
 
 .game-grid {
@@ -112,6 +111,12 @@ body {
   font-size: var(--base-p-fs);
   color: var(--text-color);
   position: relative;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+.game-grid:hover {
+  background-color: teal;
 }
 
 
