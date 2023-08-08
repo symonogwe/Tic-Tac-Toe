@@ -23,11 +23,11 @@
 
 body {
   background-color: var(--base-color);
+  overflow-y: hidden;
 }
 
 #main-content {
-  /* border: 1px solid red; */
-  height: 95vh;
+  height: 90vh;
 }
 
 .game-h1 {
